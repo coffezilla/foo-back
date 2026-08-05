@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    container_name: rails-api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"          # host:container
+    environment:
+      - RAILS_ENV=production
+      - RAILS_MASTER_KEY=78373ac7c1cf28ed7a0529252654747b
+      # outras variáveis...
+    # networks não é obrigatório se for só acesso local
